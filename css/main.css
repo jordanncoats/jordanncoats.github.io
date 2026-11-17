@@ -4,8 +4,19 @@ body {
 }
 
 a {
-  color: #808080;
+  color: #6b6b6b;
   text-decoration: none;
+}
+
+/* Section titles and job title: keep the sizes they had as h3 / h4 */
+h2 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h3 {
+  font-size: 1em;
+  margin: 1.33em 0;
 }
 
 .frame {
@@ -21,46 +32,80 @@ a {
   line-height: 25px;
 }
 
-#intro hr {
+#intro hr,
+.frame > hr {
   border: 0;
   height: 2px;
   background: #1a1a1a;
   width: 80px;
 }
 
-/** LIGHTBOX MARKUP by Gregory Schier **/
-
-.lightbox {
-	/** Default lightbox to hidden */
-	display: none;
-
-	/** Position and style */
-	position: fixed;
-	z-index: 999;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	top: 0;
-	left: 0;
-	background: rgba(0,0,0,0.8);
+/* Tagline under the name: matches the old h4 */
+.tagline {
+  font-weight: bold;
+  margin: 1.33em 0;
 }
 
-.lightbox img {
-	/** Pad the lightbox image */
-	max-width: 90%;
-	max-height: 80%;
-	margin-top: 2%;
+#links {
+  text-align: center;
 }
 
-.lightbox:target {
-	/** Remove default browser outline */
-	outline: none;
+#links a {
+  display: inline-block;
+  margin: 0 8px;
+  border-radius: 50%;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
 
-	/** Unhide lightbox **/
-	display: block;
+#links a:hover,
+#links a:focus-visible {
+  transform: translateY(-3px);
+  opacity: 0.75;
+}
+
+#links a:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 3px;
+}
+
+#links .thumbnail {
+  display: block;
+  max-width: none;
 }
 
 .thumbnail {
   border-radius: 50%;
   max-width: 37.5%;
+}
+
+/** LIGHTBOX MARKUP by Gregory Schier **/
+
+.lightbox {
+  /** Default lightbox to hidden */
+  display: none;
+
+  /** Position and style */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox img {
+  /** Pad the lightbox image */
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 2%;
+}
+
+.lightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+
+  /** Unhide lightbox **/
+  display: block;
 }
